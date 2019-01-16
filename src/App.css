@@ -1,0 +1,1583 @@
+
+.App {
+  height: 100vh;
+  display: flex;
+  color: var(--cor-letra);
+  -webkit-touch-callout: none;
+
+  /************************************************** THEMES **************************************************/
+
+  /********************************************** DEFAULT GREEN ***********************************************/
+ 
+    --cor-1: #649764;
+    --cor-2: rgba(0, 0, 0, 0.2);
+    --cor-3: #306639c0;
+    --cor-menu: rgb(255, 255, 255, 0.2);
+    --cor-letra: white;
+    --cor-letra-disble: #677077;
+    --cor-fundo: #304c55;
+    --cor-placeholder: rgb(214, 214, 214);
+    --background: linear-gradient(to bottom, #304c55, #245053, #1d524d, #225441, #305533) !important;
+    --background-menu: linear-gradient(to bottom, #4f7885, #3d7c81, #327f76, #398065, #4b804f) !important;
+
+  /*********************************************** DARK THEME ************************************************/
+
+    /* --cor-1: #395b75;
+    --cor-2: #2C3A47;
+    --cor-3: #2C3A47;
+    --cor-letra: white;
+    --cor-letra-disble: #677077;
+    --cor-fundo:#2d3436;
+    --cor-menu: #2C3A47;
+    --cor-placeholder: rgb(214, 214, 214); */
+
+  /*********************************************** LIGHT THEME ***********************************************/
+
+    /* --cor-1: #CAD3C8;
+    --cor-2: rgb(225, 230, 224, 0.918);
+    --cor-3: rgba(223, 233, 221, 0.384);
+    --cor-letra: #353b48;
+    --cor-letra-disble: #707888;
+    --cor-fundo:white;  
+    --cor-menu: rgba(255, 255, 255, 0.493);
+    --cor-placeholder: rgb(214, 214, 214); */
+     /* --cor-fundo:#f1f2f6;*/
+
+  /**************************************** SOME GRADIENT BACKGROUNDS ****************************************/  
+
+    /* background-image: linear-gradient(to right, #243949 0%, #517fa4 100%) !important; */
+    /* background-image: linear-gradient(to right, #09203f 0%, #537895 100%) !important; */
+    /* background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%) !important; */
+    /* background-image: linear-gradient(110deg, #c5d5cb 30%, #9fa8a3 80%) !important; */
+
+  /************************************************************************************************************/
+}
+
+
+
+table {
+    border-collapse: collapse;
+    background: var(--cor-1);
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid var(--cor-3);
+}
+
+.ItemAdded{
+  background-color: var(--cor-fundo);
+  z-index: 1500;
+  position: absolute;
+  border-radius: 25px;
+  border-color: var(--cor-1);
+  border-style: solid;
+  width: 80%;
+  height: 150px;
+  text-align: center;
+  -webkit-animation-name: added; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  animation-name: added;
+  animation-duration: 2s;
+  visibility: hidden;
+}
+
+.Totais{
+  margin-top: 20px;
+}
+
+
+.TotaisRadio{
+  margin-left: 20px;
+}
+
+.Saved{
+  /* background-color: var(--cor-fundo); */
+  z-index: 1500;
+  margin-left: 10%;
+  width: 80%;
+  height: 200px;
+  text-align: center;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+.react-select__menu{
+  list-style-type:none;
+  background-color: var(--cor-1) !important;
+  padding: 10px 10px 10px 10px;
+  width: 80%;
+  border-radius: 25px;
+}
+.react-list-select--item{
+  /* margin-left: 15px !important; */
+  user-select: none;
+  padding: 7px 10px 7px 10px;
+  font-size: 0.9em;
+}
+
+.react-list-select--item.is-selected {
+  background-color: var(--cor-2);
+  border-radius: 25px;
+}
+
+
+.ItemAdded-hide{
+  background-color: var(--cor-3);
+  z-index: 1500;
+  position: absolute;
+  border-radius: 25px;
+  border-color: var(--cor-1);
+  border-style: solid;
+  width: 80%;
+  height: 150px;
+  visibility: hidden;
+}
+
+@-webkit-keyframes added {
+    0%   {background-color:var(--cor-fundo); left:100%; top:30%; visibility: visible;}
+    100% {background-color:var(--cor-fundo); left:10%; top:30%; visibility: visible;}
+}
+
+/* Standard syntax */
+@keyframes added {
+    0%   {background-color:var(--cor-fundo); left:100%; top:30%; visibility: visible;}
+    100% {background-color:var(--cor-fundo); left:10%; top:30%; visibility: visible;}
+}
+
+tr:hover {background-color:var(--cor-2);}
+
+.ItemMsg{
+  display: block;
+  text-align: center;
+}
+
+.ItemInfo{
+  display: block;
+  text-align: center;
+  height: auto;
+}
+
+
+
+.box {
+    border: 1px solid var(--cor-fundo);
+    padding: 15px 15px 15px 15px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+
+.box_inverted {
+    border: 1px solid var(--cor-1);
+
+    padding: 15px 15px 15px 15px;
+    margin-top:10px;
+    margin-bottom:10px;
+
+}
+
+
+
+
+.ModalHide {
+  display: none;
+    
+}
+
+/* 
+.row:after {
+    content: "";
+    display: table;
+    height: 0px;
+    clear: both;
+} */
+
+.add-button {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
+
+/* .row:after{
+    content: "";
+    display: table;
+    clear: both;
+
+} */
+
+.column_left {
+    float: left;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    transform: translate(0, 70%); 
+}
+
+.column {
+    /* float: left; */
+    width: calc(90% - 60px);
+
+    text-align: justify;
+
+}
+
+/* Clear floats after the columns */
+
+
+.ModalShow {
+  display: block;  
+}
+
+
+
+
+.Modal{
+  background-color:rgba(0, 0, 0, 0.5);
+  /* color:rgba(0, 0, 0, 0.5); */
+  overflow-y: scroll;
+}
+
+.ModalBg{ 
+  background: var(--cor-fundo);
+  /* background-image: var(--background-modal); */
+  color: var(--cor-letra);
+
+}
+
+
+.Loading {
+  position: relative;
+  left: 50%;
+  margin-top: 20px;
+  margin-right: -50%;
+  transform: translate(-50%, 0); 
+  margin-bottom: 20px;
+}
+
+
+
+
+@media screen and (min-width: 1201px) and (orientation: portrait){
+  .App__Aside {
+    width: 30% !important;
+    font-size: 1vw !important;
+    background-color: var(--cor-1) !important;
+    background-image: var(--background-menu) !important;
+    /* opacity: 0.5; */
+    display: block !important;
+    overflow-y: auto !important;
+    /* background-image: linear-gradient(-225deg, rgb(85, 101, 138) 0%, #87A7D9 80%, #DEF3F8 100%); */
+  }
+
+  .App__Aside__Hide {
+    display: none !important;
+  }
+
+}
+
+@media screen and (min-width: 601px) and (orientation: landscape) {
+  .App__Aside {
+    width: 30% !important;
+    font-size: 1.5vw !important;
+    background-color: var(--cor-1) !important;
+    background-image: var(--background-menu) !important;
+    /* opacity: 0.5; */
+    display: block !important;
+    overflow-y: auto !important;
+    /* background-image: linear-gradient(-225deg, rgb(85, 101, 138) 0%, #87A7D9 80%, #DEF3F8 100%); */
+  }
+
+  .App__Aside__Hide {
+    display: none !important;
+  }
+
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 1200px) and (orientation: portrait) {
+  .App__Aside {
+    width: 30% !important;
+    font-size: 2.5vw !important;
+    background-color: var(--cor-1) !important;
+    background-image: var(--background-menu) !important;
+    /* opacity: 0.5; */
+    display: block !important;
+    overflow-y: auto !important;
+    /* background-image: linear-gradient(-225deg, rgb(85, 101, 138) 0%, #87A7D9 80%, #DEF3F8 100%); */
+  }
+
+  .App__Aside__Hide {
+    display: none !important;
+  }
+
+  .BarText{
+    width: 100% !important;
+    display: block !important;
+    text-align: center !important;
+    padding: 0 !important;
+    margin: 5px 0 5px 0 !important;
+  }
+
+  .BarIcon{
+    width: 100% !important;
+    padding: 0 !important;
+    display: block !important;
+    text-align: center !important;
+    margin: 5px 0 5px 0 !important;
+  }
+}
+
+
+@media screen and (max-width: 600px) and (orientation: landscape) {
+  .App__Aside {
+    width: 30% !important;
+    font-size: 2.5vw !important;
+    background-color: var(--cor-1) !important;
+    background-image: var(--background-menu) !important;
+    /* opacity: 0.5; */
+    display: block !important;
+    overflow-y: auto !important;
+    /* background-image: linear-gradient(-225deg, rgb(85, 101, 138) 0%, #87A7D9 80%, #DEF3F8 100%); */
+  }
+
+  .App__Aside__Hide {
+    display: none !important;
+  }
+
+  .BarText{
+    width: 100% !important;
+    display: block !important;
+    text-align: center !important;
+    padding: 0 !important;
+    margin: 5px 0 5px 0 !important;
+  }
+
+  .BarIcon{
+    width: 100% !important;
+    padding: 0 !important;
+    display: block !important;
+    text-align: center !important;
+    margin: 5px 0 5px 0 !important;
+  }
+}
+
+
+.MenuBar {
+  background-color: var(--cor-1);
+}
+
+.App__Aside__BG{
+    opacity: 0.9;
+    max-width:100% !important;
+    height:auto;
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    /* margin-bottom: 20px; */
+}
+
+
+.GridsBg {
+  background-color: var(--cor-1);
+  color: var(--cor-1);
+}
+
+
+.App__Aside__Delphus{
+    opacity: 0.9;
+    max-width:60% !important;
+    height:auto;
+    position:relative;
+    top:50%;
+    left:50%;
+    margin-left: -30%;
+    margin-top: -15%;
+}
+
+.App__Form {
+  width: 100%;
+  background-color: var(--cor-fundo);
+  background-image: var(--background);
+  padding: 5% 5% 5% 5%;
+  overflow: auto;
+  
+
+}
+
+.App__Form__Login {
+  width: 100%;
+  background-color: var(--cor-fundo);
+  background-image: var(--background);
+  overflow: auto;
+
+}
+
+
+.App__Form__Full {
+  width: 100%;
+  /* height: 100%; */
+  background-color: var(--cor-fundo);
+  padding: 5% 5% 5% 5%;
+  position: absolute;
+  overflow: auto;
+  height: 100vh;
+
+}
+
+.App__Form__BG {
+    width: 90%;
+    height: 100%;
+    background-image: url('/logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1
+}
+
+
+
+.PageSwitcher {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10%;
+}
+
+.PageSwitcher__Item {
+  background-color: var(--cor-3);
+  color: var(--cor-letra);
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: .9em;
+  border: none;
+  outline: none;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.PageSwitcher__Item--Active {
+  background-color: var(--cor-1);
+  color: var(--cor-letra);
+}
+
+.PageSwitcher__Item:first-child {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.PageSwitcher__Item:last-child {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.FormCenter {
+  height: 100px
+}
+
+.FormTitle {
+  color: var(--cor-letra-disable);
+  font-weight: 300;
+  margin-bottom: 50px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.FormTitle__Link {
+  color: var(--cor-letra-disable);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.7em;
+  margin: 0 10px;
+  padding-bottom: 5px;
+}
+
+.FormTitle__Link:first-child {
+  margin-left: 0;
+}
+
+.FormTitle__Link--Active {
+  color: var(--cor-letra);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.7em;
+  /* margin-top: 60%; */
+  padding-bottom: 5px;
+  padding-top: 10px;
+  border-bottom: 1px solid var(--cor-1);
+}
+
+
+.FormTitle__Login {
+  color: var(--cor-letra);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.7em;
+  /* margin-top: 60%; */
+  padding-bottom: 5px;
+  padding-top: 10px;
+  border-bottom: 1px solid var(--cor-1);
+}
+
+.App__Title{
+    opacity: 0.9;
+    max-width:70% !important;
+    height:auto;
+    position:absolute;
+    left: 50%;
+}
+
+.ButtonIcon{
+   background-color: transparent;
+  color: var(--cor-letra);
+  border: none;
+  text-align: center;
+  font-size: 0.8em;
+  display: inline; 
+  border: none;
+  color: var(--cor-letra);
+  outline: none;
+  /* border: 2px solid var(--cor-2); */
+}
+
+
+.FormField {
+  margin-bottom: 25px;
+}
+
+.FormField__Label {
+  display: block;
+  text-transform: uppercase;
+  font-size: .9em;
+  color: var(--cor-letra);
+}
+
+.CompleteButton{
+  width: calc(80% - 40px);
+  border-radius: 25px 0 0 25px;
+  background-color: var(--cor-1);
+  border: none;
+  color: var(--cor-letra);
+  outline: none;
+  /* border: 2px solid var(--cor-2); */
+  font-size: 1em;
+  padding: 10px;
+  font-weight: 300;
+  /* padding-bottom: 10px; */
+  margin-top: 5px;
+}
+
+.ButtonComplete{
+  width: 40px;
+  border-radius: 0 25px 25px 0;
+  background-color: var(--cor-3);
+  border: none;
+  color: var(--cor-letra);
+  outline: none;
+  /* border: 2px solid var(--cor-2); */
+  font-size: 1em;
+  padding: 10px;
+  font-weight: 300;
+  /* padding-bottom: 10px; */
+  margin-top: 5px;
+}
+
+.FormField__Input {
+  width: 80%;
+  border-radius: 25px;
+  background-color: var(--cor-1);
+  border: none;
+  color: var(--cor-letra);
+  outline: none;
+  /* border: 2px solid var(--cor-2); */
+  font-size: 1em;
+  padding: 10px;
+  font-weight: 300;
+  /* padding-bottom: 10px; */
+  margin-top: 5px;
+
+}
+
+@media screen and (min-width: 1001px) and (orientation: portrait) {
+
+  .FormField__Input__Login {
+    width: 400px;
+    border-radius: 25px;
+    background-color: var(--cor-1);
+    border: none;
+    color: var(--cor-letra);
+    outline: none;
+    /* border: 2px solid var(--cor-2); */
+    font-size: 1em;
+    padding: 10px;
+    position: relative;
+    left: 50%;
+    margin-top: 10px;
+    margin-right: -50%;
+    transform: translate(-50%, 0); 
+    margin-bottom: 10px;
+
+  }
+
+  .App__Aside__Login {
+    width: 400px;
+    height: 200px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    /* margin-top: 20px; */
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    /* margin-bottom: 100px; */
+
+    /* background-image: linear-gradient(-225deg, #649764 30%, rgb(151, 187, 144) 80%, #DEF3F8 100%); */
+  }
+
+}
+
+
+.MeiaTela{
+  height: 45vh;
+  display: block;
+  /* border-color: white;
+  border-width: 1px;
+  border:solid; */
+}
+
+.FormFields__Login {
+    position: relative; /* or absolute */
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);  
+}
+
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+
+  .FormField__Input__Login {
+    width: 80%;
+    border-radius: 25px;
+    background-color: var(--cor-1);
+    border: none;
+    color: var(--cor-letra);
+    outline: none;
+    /* border: 2px solid var(--cor-2); */
+    font-size: 1em;
+    padding: 10px;
+    position: relative;
+    left: 50%;
+    margin-top: 10px;
+    margin-right: -50%;
+    transform: translate(-50%, 0); 
+    margin-bottom: 10px;
+
+  }
+
+  .App__Aside__Login {
+    width: 80%;
+    height: 200px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    /* margin-top: 20px; */
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    /* margin-bottom: 100px; */
+
+    /* background-image: linear-gradient(-225deg, #649764 30%, rgb(151, 187, 144) 80%, #DEF3F8 100%); */
+  }
+
+}
+
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+
+   .FormField__Input__Login {
+    width: 300px;
+    border-radius: 25px;
+    background-color: var(--cor-1);
+    border: none;
+    color: var(--cor-letra);
+    outline: none;
+    /* border: 2px solid var(--cor-2); */
+    font-size: 1em;
+    padding: 10px;
+    position: relative;
+    left: 50%;
+    /* margin-top: 5px; */
+    margin-right: -50%;
+    transform: translate(-50%, 0); 
+    /* margin-bottom: 5px; */
+
+  }
+
+  .App__Aside__Login {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    left: 50%;
+    top: 40%;
+    /* margin-top: 20px; */
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    /* margin-bottom: 100px; */
+
+    /* background-image: linear-gradient(-225deg, #649764 30%, rgb(151, 187, 144) 80%, #DEF3F8 100%); */
+  }
+
+  .MeiaTela{
+  height: 42vh;
+  display: block;
+  /* border-color: white;
+  border-width: 1px;
+  border:solid; */
+}
+
+
+}
+
+
+@media screen and (min-height: 601px) and (orientation: landscape) {
+
+   .FormField__Input__Login {
+    width: 400px;
+    border-radius: 25px;
+    background-color: var(--cor-1);
+    border: none;
+    color: var(--cor-letra);
+    outline: none;
+    /* border: 2px solid var(--cor-2); */
+    font-size: 1em;
+    padding: 10px;
+    position: relative;
+    left: 50%;
+    margin-top: 10px;
+    margin-right: -50%;
+    transform: translate(-50%, 0); 
+    margin-bottom: 10px;
+
+  }
+
+  .App__Aside__Login {
+    width: 400px;
+    height: 200px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    /* margin-top: 20px; */
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    /* margin-bottom: 100px; */
+
+    /* background-image: linear-gradient(-225deg, #649764 30%, rgb(151, 187, 144) 80%, #DEF3F8 100%); */
+  }
+
+}
+
+
+
+.FormField__Input__Login::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--cor-placeholder);
+    opacity: 1; /* Firefox */
+}
+
+.FormField__InputUn {
+  width: 55%;
+  border-radius: 25px 0px 0px 25px;
+  background-color: var(--cor-1);
+  border: none;
+  color: var(--cor-letra);
+  outline: none;
+  /* border: 2px solid var(--cor-2); */
+  font-size: 1em;
+  padding: 10px;
+  font-weight: 300;
+  /* padding-bottom: 10px; */
+  margin-top: 5px;
+  margin-right: 0px;
+}
+
+.ButtonsHide{
+  display:none;
+}
+
+
+
+.FormField__Un {
+  width: 25%;
+  padding: 10px;
+  margin-left:-5px !important;
+  border-radius: 0px 25px 25px 0px;
+  background-color: var(--cor-2);
+  border: none;
+  color: var(--cor-letra);
+  outline: none;
+  text-align: right;
+  /* border: 2px solid var(--cor-2); */
+  font-size: 1em;
+  font-weight: 300;
+  /* padding-bottom: 10px; */
+
+}
+
+.FormField__Input:read-only {
+  background-color: var(--cor-2);
+
+}
+
+
+
+
+
+
+.ui.checkbox {
+  margin-right: 30px;
+}
+
+
+.ui.checkbox input,
+.ui.toggle.checkbox label,  .ui.toggle.checkbox label:focus{   
+  color:rgba(129, 123, 123, 0.61) !important;
+}
+
+.ui.toggle.checkbox input:checked ~ label, .ui.toggle.checkbox input:focus:checked ~ label{
+  color:var(--cor-letra) !important;
+}
+
+.ui.toggle.checkbox input:checked ~ .box:before, .ui.toggle.checkbox input:checked ~ label:before {
+    background-color:  var(--cor-1) !important;
+    color:var(--cor-letra) !important;
+}
+
+.ui.toggle.checkbox input:checked ~ .box:before, .ui.toggle.checkbox input:checked ~ label:before {
+    background-color: var(--cor-1) !important;
+    color:var(--cor-letra) !important;
+}
+
+.ui.toggle.checkbox input:focus:checked ~ .box:before, .ui.toggle.checkbox input:focus:checked ~ label:before {
+    background-color: var(--cor-1) !important;
+    color:var(--cor-letra) !important;
+}
+
+
+.FormField__Radio {
+  width: 80%;
+  border-radius: 25px;
+  background-color: var(--cor-1);
+  border: none;
+  color: var(--cor-letra);
+  outline: none;
+  /* border: 2px solid var(--cor-2); */
+  font-size: 1em;
+  padding: 10px;
+  font-weight: 300;
+  /* padding-bottom: 10px; */
+  margin-top: 5px;
+}
+
+
+.FormField__Input__OBS {
+  width: 80%;
+  border-radius: 25px;
+  background-color: var(--cor-1);
+  border: none;
+  color: var(--cor-letra);
+  height: 150px;
+  outline: none;
+  word-break: break-word;
+  text-align: top;
+  vertical-align: top;
+  /* border: 2px solid var(--cor-2); */
+  font-size: 1em;
+  padding: 10px;
+  font-weight: 300;
+  /* padding-bottom: 10px; */
+  margin-top: 5px;
+
+}
+
+.FormField__Input__OBS:read-only {
+  background-color: var(--cor-2);
+  height: 80px;
+}
+
+
+.FormField__InputTelefone {
+  width: 80%;
+  border-radius: 25px;
+  background-color: var(--cor-1);
+  border: none;
+  color: var(--cor-letra);
+  outline: none;
+  /* border: 2px solid var(--cor-2); */
+  font-size: 1em;
+  padding: 10px;
+  font-weight: 300;
+  /* padding-bottom: 10px; */
+  margin-top: 5px;
+  width: calc(80% - 65px);
+}
+
+.FormFilter__Label {
+  display: block;
+  text-transform: uppercase;
+  font-size: .9em;
+  color: var(--cor-letra);
+  /* padding-right: 0.5em; */
+}
+
+.FormFilter__Input {
+  width: 100%;
+  border-radius: 25px;
+  background-color: var(--cor-1);
+  border: none;
+  color: var(--cor-letra);
+  outline: none;
+  /* border: 2px solid var(--cor-2); */
+  font-size: 1em;
+  font-weight: 300;
+  padding: 10px;
+  margin-bottom: 10px;
+  /* margin-top: 10px; */
+}
+
+
+
+.FormFilter__Date {
+  width: 50%;
+  border-radius: 25px;
+  background-color: var(--cor-1);
+  border: none;
+  color: var(--cor-letra);
+  outline: none;
+  /* border: 2px solid var(--cor-2); */
+  font-size: 0.9em;
+  font-weight: 300;
+  padding: 10px;
+  margin-bottom: 10px;
+  /* margin-top: 10px; */
+}
+
+.FormFilter__Date__Show {
+  width: 170px;
+  border-radius: 25px;
+  background-color: var(--cor-1);
+  border: none;
+  color: var(--cor-letra);
+  outline: none;
+  /* border: 2px solid var(--cor-2); */
+  font-size: 0.9em;
+  font-weight: 300;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+
+
+.Dropdown-control {
+  width: 100px;
+  border-radius: 25px;
+  padding: 8px 10px;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.Dropdown-menu {
+  width: 100px;
+  border-radius: 25px;
+  padding: 8px 10px;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+
+
+.Dropdown-option, .Dropdown-menu, .Dropdown-title, .Dropdown-control {
+    border-color: transparent !important;
+    color: var(--cor-letra) !important;
+    background-color: var(--cor-1) !important;
+    position: relative !important;
+
+  }
+
+  .Dropdown-root {
+    margin-right: 20px;
+    
+  }
+
+  .Dropdown-control {
+    border-radius: 25px !important;
+  }
+
+  .Dropdown-option, .Dropdown-menu {
+    border-radius: 15px !important;
+  }
+
+  
+
+  .Dropdown-menu, .Dropdown-title, .Dropdown-control{
+    width: 170px !important;
+    margin-right: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .Dropdown-option.is-selected {
+    background-color: var(--cor-2) !important;
+    border-radius: 15px !important;
+    width: 100% !important
+  }
+
+  .Dropdown-arrow {
+    border-color: var(--cor-letra) transparent transparent !important;
+  }
+
+  .is-open .Dropdown-arrow {
+    border-color:  transparent transparent var(--cor-letra) !important;
+  }
+
+
+
+@media screen and (min-width: 1201px) {
+
+
+  .FormField__List {
+    border-radius: 25px;
+    background-color: var(--cor-1);
+    border: none;
+    color: var(--cor-letra);
+    outline: none;
+    list-style-type: none; 
+    padding: 1px;
+    margin-top: 1px;
+    font-size: 1em;
+    font-weight: 300;
+    height: auto;
+    z-index: 1100;
+    
+  }
+
+  
+
+  .FormField__Complete {
+    width: 80%;
+    user-select: none;
+    border-radius: 25px;
+    background-color: var(--cor-1);
+    border: none;
+    color: var(--cor-letra);
+    height: 150px;
+    outline: none;
+    /* border: 2px solid var(--cor-2); */
+    font-size: 1em;
+    padding: 10px;
+    font-weight: 300;
+    margin-top: 10px;
+    z-index: 1100;
+    overflow-y: scroll;
+    
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 1200px){
+
+
+
+  .FormField__List {
+    border-radius: 25px;
+    background-color: var(--cor-1);
+    border: none;
+    color: var(--cor-letra);
+    outline: none;
+    list-style-type: none; 
+    padding: 1px;
+    height: auto;
+    margin-top: 1px;
+    font-size: 1em;
+    font-weight: 300;
+    z-index: 1100;
+    
+  }
+
+  .FormField__Complete {
+    width: 80%;
+    border-radius: 25px;
+    background-color: var(--cor-1);
+    border: none;
+    height: 200px;
+    color: var(--cor-letra);
+    outline: none;
+    /* border: 2px solid var(--cor-2); */
+    font-size: 1em;
+    padding: 10px;
+    font-weight: 300;
+    margin-top: 10px;
+    z-index: 1100;
+    overflow-y: scroll;
+  }
+}
+
+
+
+
+
+.FormField__List__Text {
+  margin-left: 7px;
+  margin-top: 7px;
+  word-break: break-word;
+  text-justify: distribute;
+  vertical-align: middle;
+}
+
+.FormField__Label__Desconto {
+  text-transform: uppercase;
+  font-size: .9em;
+  color: var(--cor-letra);
+}
+
+.FormField__Input::placeholder {
+  color: var(--cor-letra-disble);
+}
+
+.FormField__Button {
+  background-color: var(--cor-1);
+  color: var(--cor-letra);
+  border: none;
+  outline: none;
+  width: 100px;
+  border-radius: 25px;
+  padding: 8px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.FormField__Button__Add {
+  background-color: var(--cor-1);
+  color: var(--cor-letra);
+  border: none;
+  outline: none;
+  width: 200px;
+  border-radius: 25px;
+  padding: 8px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.FormField__Button__Login {
+  position: relative;
+  left: 50%;
+  margin-top: 20px;
+  margin-right: -50%;
+  transform: translate(-50%, 0); 
+  margin-bottom: 20px;
+  background-color: var(--cor-1);
+  color: var(--cor-letra);
+  border: none;
+  outline: none;
+  width: 100px;
+  border-radius: 25px;
+  padding: 8px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.FormField__Button__Center {
+  position: relative;
+  left: 50%;
+  margin-top: 20px;
+  margin-right: -50%;
+  transform: translate(-50%, 0); 
+  margin-bottom: 20px;
+  background-color: var(--cor-1);
+  color: var(--cor-letra);
+  border: none;
+  outline: none;
+  width: 100px;
+  border-radius: 25px;
+  padding: 8px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.FormField__Pagination {
+  background-color: var(--cor-1);
+  color: var(--cor-letra);
+  border: none;
+  outline: none;
+  width: 20%;
+  height: 40px;
+  /* padding: 15px 20px; */
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.FormField__Pagination__OutInput {
+  background-color: var(--cor-1);
+  color: var(--cor-letra);
+  border: none;
+  outline: none;
+  width: 26%;
+  height: 40px;
+  /* padding: 15px 20px; */
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.FormField__Pagination__Input {
+  background-color: var(--cor-2);
+  color: var(--cor-letra);
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 34px;
+  /* padding: 15px 20px; */
+  text-align: center;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  font-size: 1em;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.FormField__Pagination__Page {
+  background-color: var(--cor-2);
+  color: var(--cor-letra);
+  text-align: center;
+  border: none;
+  height: 40px;
+  outline: none;
+  width: 20%;
+  /* padding: 15px 20px; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* .FormField__Pagination:hover {
+  background-color: var(--cor-2);
+  color: var(--cor-letra);
+  border: none;
+  outline: none;
+  text-align: center;
+  height: 40px;
+  width: 13%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  text-decoration-color: var(--cor-letra);
+  font-weight: 400;
+} */
+
+.FormField__Pagination__First {
+  background-color: var(--cor-1);
+  color: var(--cor-letra);
+  border: none;
+  height: 40px;
+  text-align: center;
+  outline: none;
+  width: 20%;
+  /* padding: 15px 20px; */
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* .FormField__Pagination__First:hover {
+  background-color: var(--cor-2);
+  color: var(--cor-letra);
+  border: none;
+  height: 40px;
+  outline: none;
+  width: 13%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  font-size: 0.9em;
+  text-decoration-color: var(--cor-letra);
+  font-weight: 400;
+} */
+
+.FormField__Pagination__Last {
+  background-color: var(--cor-1);
+  color: var(--cor-letra);
+  border: none;
+  height: 40px;
+  outline: none;
+  text-align: center;
+  width: 20%;
+  /* padding: 15px 20px; */
+  margin-top: 10px;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* .FormField__Pagination__Last:hover {
+  background-color: var(--cor-2);
+  color: var(--cor-letra);
+  border: none;
+  outline: none;
+  height: 40px;
+  text-align: center;
+  width: 13%;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  text-decoration-color: var(--cor-letra);
+  font-weight: 400;
+} */
+
+
+
+.FormField__Button__Fix {
+  background-color: var(--cor-2);
+  color: var(--cor-letra);
+  border: none;
+  position: absolute;
+  z-index: 999;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  border-color: var(--cor-letra);
+  padding: 8px 10px;
+  top: calc(3% + 50px);
+  right:5%;
+  font-size: 0.9em;
+  text-align: center;
+  font-weight: 400;
+}
+
+.FormField__Button__HideShow {
+  background-color: var(--cor-2);
+  color: var(--cor-letra);
+  border: none;
+  position: absolute;
+  z-index: 1000;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  border-color: var(--cor-letra);
+  padding: 8px 10px;
+  top: 3%;
+  right:5%;
+  font-size: 0.9em;
+  text-align: center;
+  font-weight: 400;
+}
+
+
+.FormField__Icon__ShowHide {
+  color: var(--cor-letra);
+  border: none;
+  position: relative;
+  z-index: 1000;
+  outline: none;
+  font-size: 0.6em;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+
+
+.FormField__Icon__Fix {
+  color: var(--cor-letra);
+  border: none;
+  position: relative;
+  z-index: 1000;
+  outline: none;
+  font-size: 0.6em;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+
+.FormField__ButtonDisabled {
+  background-color: var(--cor-3);
+  color: var(--cor-letra);
+  border: none;
+  outline: none;
+  width: 100px;
+  border-radius: 25px;
+  padding: 8px 10px;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.Grid__Button {
+  background-color: transparent;
+  color: var(--cor-letra);
+  border: 2px;
+  margin-top: 9px;
+  border-style: solid;
+  border-color: var(--cor-letra);
+  /* outline: 10px; */
+  outline-color: var(--cor-letra);
+  border-radius: 25px;
+  /* padding: 15px 70px; */
+
+}
+
+.Grid__Button__Hide {
+  display: none
+}
+
+.Grid__Button:hover {
+  background-color: var(--cor-1);
+}
+
+.FormField__Grid {
+  background-color: var(--cor-1);
+  color: var(--cor-letra);
+
+}
+
+.FormField__Grid:hover {
+  background-color: var(--cor-2);
+  color: var(--cor-letra);
+}
+.FormField__GridDetailed:hover {
+  background-color: var(--cor-2);
+  color: var(--cor-letra);
+}
+
+.FormField__GridDetailed {
+  background-color: var(--cor-2);
+  color: var(--cor-letra);
+
+}
+
+
+
+.FormField__Button__Bar {
+  background-color:transparent;
+  color: var(--cor-letra);
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  width:50px;
+  height:50px;
+  position: absolute;
+  bottom: 5%; 
+  right: 5%;
+}
+
+
+
+
+.FormField__MenuButton {
+  background-color: var(--cor-1);
+  color: var(--cor-letra);
+  border: none;
+  outline: none;
+  position: relative;
+  margin-left: -20%;
+  left: 50%;
+  margin-top: 10%;
+  border-radius: 25px; 
+  padding: 15px 70px;
+  font-size: .9em;
+  font-weight: 500;
+}
+
+.FormField__Link {
+  color: var(--cor-letra-disble);
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 1.5px solid var(--cor-1);
+  padding-bottom: 5px;
+}
+
+.FormField__CheckboxLabel {
+  color: var(--cor-letra-disable);
+  font-size: .9em;
+}
+
+
+.FormField__Checkbox {
+  position: relative;
+  top: 1.5px;
+}
+
+.FormField__TermsLink {
+  color: var(--cor-letra);
+  border-bottom: 1px solid var(--cor-3);
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 2px;
+  margin-left: 5px;
+}
+
+.Pdf_Logo {
+  height: 60px;
+  width: 60px; 
+  margin-top: -30px;
+}
+
+.Pdf_Logo_Detailed {
+  height: 60px;
+  width: 60px; 
+  margin-top: -30px;
+  
+  display: block;
+}
+
+.Pdf_Logo_Hide {
+  display: none;
+}
